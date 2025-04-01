@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Custom utilities for responsive design */
+  .responsive-container {
+    @apply px-4 sm:px-6 md:px-8 max-w-full;
+  }
+  
+  /* Custom scrollbars for code blocks */
+  .code-scrollbar::-webkit-scrollbar {
+    @apply h-1.5 w-1.5;
+  }
+  
+  .code-scrollbar::-webkit-scrollbar-track {
+    @apply bg-slate-100 rounded-full;
+  }
+  
+  .code-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full hover:bg-slate-400;
+  }
+  
+  /* Status colors */
+  .text-success {
+    @apply text-green-600;
+  }
+  
+  .text-warning {
+    @apply text-amber-600;
+  }
+  
+  .text-danger {
+    @apply text-red-600;
+  }
+  
+  .bg-success\/20 {
+    @apply bg-green-50;
+  }
+  
+  .bg-warning\/20 {
+    @apply bg-amber-50;
+  }
+  
+  .bg-danger\/20 {
+    @apply bg-red-50;
+  }
+}
