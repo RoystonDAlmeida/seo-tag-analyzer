@@ -3,6 +3,7 @@ import { seoRequests, type SeoRequest, type InsertSeoRequest } from "@shared/sch
 export interface IStorage {
   saveRequest(request: InsertSeoRequest): Promise<SeoRequest>;
   getRequestsByUrl(url: string): Promise<SeoRequest[]>;
+  getAllRequests(): Promise<SeoRequest[]>;
 }
 
 export class MemStorage implements IStorage {
@@ -25,6 +26,10 @@ export class MemStorage implements IStorage {
     return Array.from(this.requests.values()).filter(
       (request) => request.url === url
     );
+  }
+
+  async getAllRequests(): Promise<SeoRequest[]> {
+    return Array.from(this.requests.values());
   }
 }
 
